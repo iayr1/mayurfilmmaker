@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 240 15% 6%;
+    --foreground: 0 0% 95%;
+
+    --card: 240 12% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 240 12% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 270 70% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 80% 55%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 10% 18%;
+    --muted-foreground: 240 5% 55%;
+
+    --accent: 45 90% 55%;
+    --accent-foreground: 240 15% 6%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 240 10% 20%;
+    --input: 240 10% 20%;
+    --ring: 270 70% 60%;
+
+    --radius: 0.75rem;
+
+    /* Custom cinematic tokens */
+    --glow-purple: 270 70% 60%;
+    --glow-blue: 210 80% 55%;
+    --glow-gold: 45 90% 55%;
+    --glass: 240 12% 12%;
+    --glass-border: 240 10% 25%;
+  }
+
+  .dark {
+    --background: 240 15% 6%;
+    --foreground: 0 0% 95%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Space Grotesk', sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-glass/40 backdrop-blur-xl border border-glass-border rounded-2xl;
+  }
+
+  .glow-text {
+    text-shadow: 0 0 40px hsl(var(--primary) / 0.5);
+  }
+
+  .glow-box {
+    box-shadow: 0 0 60px -20px hsl(var(--primary) / 0.4),
+                0 0 40px -20px hsl(var(--glow-blue) / 0.3);
+  }
+
+  .gradient-text {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary via-secondary to-accent;
+  }
+
+  .hero-gradient {
+    background: radial-gradient(ellipse 80% 60% at 50% 40%, 
+      hsl(var(--primary) / 0.15) 0%, 
+      hsl(var(--glow-blue) / 0.08) 40%, 
+      transparent 70%);
+  }
+
+  .section-gradient {
+    background: linear-gradient(180deg,
+      transparent 0%,
+      hsl(var(--primary) / 0.03) 50%,
+      transparent 100%);
+  }
+
+  .neon-line {
+    height: 1px;
+    background: linear-gradient(90deg, 
+      transparent 0%, 
+      hsl(var(--primary)) 20%, 
+      hsl(var(--secondary)) 50%, 
+      hsl(var(--primary)) 80%, 
+      transparent 100%);
+    box-shadow: 0 0 20px hsl(var(--primary) / 0.5);
+  }
+
+  .btn-glow {
+    @apply relative overflow-hidden;
+    box-shadow: 0 0 30px -10px hsl(var(--primary) / 0.6);
+    transition: all 0.3s ease;
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 50px -10px hsl(var(--primary) / 0.8);
+    transform: translateY(-2px);
+  }
+
+  .service-card {
+    @apply glass-card p-6 transition-all duration-500;
+  }
+
+  .service-card:hover {
+    @apply border-primary/50;
+    box-shadow: 0 0 40px -15px hsl(var(--primary) / 0.5);
+    transform: translateY(-5px);
+  }
+
+  .skill-badge {
+    @apply glass-card px-4 py-2 text-sm text-muted-foreground transition-all duration-300;
+  }
+
+  .skill-badge:hover {
+    @apply text-foreground border-primary/40;
+  }
+
+  .video-card {
+    @apply relative overflow-hidden rounded-xl transition-all duration-500;
+  }
+
+  .video-card::before {
+    content: '';
+    @apply absolute inset-0 z-10 opacity-0 transition-opacity duration-300;
+    background: linear-gradient(to top, 
+      hsl(var(--background) / 0.9) 0%, 
+      transparent 50%);
+  }
+
+  .video-card:hover::before {
+    @apply opacity-100;
+  }
+
+  .video-card:hover {
+    box-shadow: 0 0 60px -20px hsl(var(--primary) / 0.5);
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 30px hsl(var(--primary) / 0.4);
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 3s ease-in-out infinite;
+  }
+
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 0.5; }
+    50% { opacity: 1; }
+  }
+
+  .animate-gradient {
+    background-size: 200% 200%;
+    animation: gradient 8s ease infinite;
+  }
+
+  @keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
