@@ -53,7 +53,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                  <p className="text-lg font-display font-medium text-foreground break-words">+91 808 720 5660</p>
+                  <p className="text-lg font-display font-medium text-foreground truncate">+91 808 720 5660</p>
                 </div>
                 <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.a>
@@ -69,7 +69,7 @@ const ContactSection = () => {
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-muted-foreground mb-1">Email</p>
-                  <p className="text-base sm:text-lg font-display font-medium text-foreground break-all">mayuraimaker@gmail.com</p>
+                  <p className="text-base sm:text-lg font-display font-medium text-foreground truncate">mayuraimaker@gmail.com</p>
                 </div>
                 <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
               </motion.a>
