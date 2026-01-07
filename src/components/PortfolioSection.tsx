@@ -16,7 +16,7 @@ const getYouTubeId = (url: string): string | null => {
     /(?:youtube\.com\/watch\?v=|youtu\.be\/|youtube\.com\/embed\/)([^&\n?#]+)/,
     /^([a-zA-Z0-9_-]{11})$/
   ];
-  
+
   for (const pattern of patterns) {
     const match = url.match(pattern);
     if (match) return match[1];
@@ -28,30 +28,37 @@ const getYouTubeId = (url: string): string | null => {
 const portfolioItems: PortfolioItem[] = [
   {
     id: 1,
-    title: "AI Dreamscape",
-    description: "An experimental AI-generated short film exploring surreal landscapes",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with your actual YouTube URL
-    category: "AI Film",
+    title: "Hickory Dickory Dock",
+    description: "A fun and engaging nursery rhyme animation for kids",
+    youtubeUrl: "https://youtu.be/Gyz3j98r8E8",
+    category: "Nursery Rhyme",
   },
   {
     id: 2,
-    title: "Neon Nights",
-    description: "Cinematic AI music video with cyberpunk aesthetics",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with your actual YouTube URL
-    category: "Music Video",
+    title: "AI Dreamscape",
+    description: "An experimental AI-generated short film exploring surreal landscapes",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    category: "AI Film",
   },
   {
     id: 3,
-    title: "The Last Memory",
-    description: "An emotional AI-generated story about love and loss",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with your actual YouTube URL
-    category: "AI Story",
+    title: "Neon Nights",
+    description: "Cinematic AI music video with cyberpunk aesthetics",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    category: "Music Video",
   },
   {
     id: 4,
+    title: "The Last Memory",
+    description: "An emotional AI-generated story about love and loss",
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    category: "AI Story",
+  },
+  {
+    id: 5,
     title: "Digital Genesis",
     description: "Text-to-video experiment showcasing AI evolution",
-    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ", // Replace with your actual YouTube URL
+    youtubeUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
     category: "Experiment",
   },
 ];
@@ -82,10 +89,10 @@ const PortfolioSection = () => {
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 max-w-7xl mx-auto">
             {portfolioItems.map((item, index) => {
               const youtubeId = getYouTubeId(item.youtubeUrl);
-              
+
               return (
                 <motion.div
                   key={item.id}
@@ -109,10 +116,10 @@ const PortfolioSection = () => {
                         }}
                       />
                     )}
-                    
+
                     {/* Overlay */}
                     <div className="absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent opacity-60 group-hover:opacity-90 transition-opacity duration-300" />
-                    
+
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center z-20">
                       <motion.div
@@ -121,7 +128,7 @@ const PortfolioSection = () => {
                         <Play className="h-5 w-5 md:h-6 md:w-6 text-primary-foreground ml-1" fill="currentColor" />
                       </motion.div>
                     </div>
-                    
+
                     {/* Info */}
                     <div className="absolute bottom-0 left-0 right-0 p-4 md:p-6 z-20">
                       <span className="inline-block px-2 md:px-3 py-1 text-xs uppercase tracking-wider bg-primary/20 text-primary rounded-full mb-2 md:mb-3 backdrop-blur-sm">

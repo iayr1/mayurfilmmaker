@@ -12,7 +12,7 @@ const ContactSection = () => {
   return (
     <section id="contact" className="py-24 md:py-32 relative">
       <div className="absolute inset-0 section-gradient" />
-      
+
       <div className="container relative z-10 px-4">
         <motion.div
           className="text-center mb-16"
@@ -35,7 +35,7 @@ const ContactSection = () => {
 
         <div className="max-w-2xl mx-auto">
           <motion.div
-            className="glass-card p-8 md:p-12 glow-box"
+            className="glass-card p-6 md:p-12 glow-box"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
@@ -48,12 +48,12 @@ const ContactSection = () => {
                 className="flex items-center gap-4 p-4 rounded-xl bg-muted/30 hover:bg-muted/50 transition-all duration-300 group"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                <div className="w-12 h-12 shrink-0 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                   <Phone className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <p className="text-sm text-muted-foreground mb-1">Phone</p>
-                  <p className="text-lg font-display font-medium text-foreground">+91 808 720 5660</p>
+                  <p className="text-lg font-display font-medium text-foreground break-words">+91 808 720 5660</p>
                 </div>
                 <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
               </motion.a>
@@ -64,12 +64,12 @@ const ContactSection = () => {
                 className="flex items-center gap-4 p-4 rounded-xl bg-muted/30 hover:bg-muted/50 transition-all duration-300 group"
                 whileHover={{ x: 5 }}
               >
-                <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
+                <div className="w-12 h-12 shrink-0 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
                   <Mail className="h-5 w-5 text-primary group-hover:text-primary-foreground transition-colors" />
                 </div>
                 <div className="flex-1 min-w-0">
                   <p className="text-sm text-muted-foreground mb-1">Email</p>
-                  <p className="text-base sm:text-lg font-display font-medium text-foreground truncate">mayuraimaker@gmail.com</p>
+                  <p className="text-base sm:text-lg font-display font-medium text-foreground break-all">mayuraimaker@gmail.com</p>
                 </div>
                 <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity flex-shrink-0" />
               </motion.a>

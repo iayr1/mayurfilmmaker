@@ -6,42 +6,42 @@
 
 @layer base {
   :root {
-    --background: 240 15% 6%;
-    --foreground: 0 0% 95%;
+    --background: 0 0% 4%; /* Deep black #0a0a0a */
+    --foreground: 0 0% 98%;
 
-    --card: 240 12% 10%;
-    --card-foreground: 0 0% 95%;
+    --card: 0 0% 6%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 240 12% 10%;
-    --popover-foreground: 0 0% 95%;
+    --popover: 0 0% 6%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 270 70% 60%;
+    --primary: 265 80% 65%; /* Sophisticated violet */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 210 80% 55%;
-    --secondary-foreground: 0 0% 100%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 240 5.9% 10%;
 
-    --muted: 240 10% 18%;
-    --muted-foreground: 240 5% 55%;
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
 
-    --accent: 45 90% 55%;
-    --accent-foreground: 240 15% 6%;
+    --accent: 265 80% 65%;
+    --accent-foreground: 0 0% 98%;
 
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
 
-    --border: 240 10% 20%;
-    --input: 240 10% 20%;
-    --ring: 270 70% 60%;
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 265 80% 65%;
 
-    --radius: 0.75rem;
+    --radius: 0.5rem;
 
-    /* Custom cinematic tokens */
-    --glow-purple: 270 70% 60%;
-    --glow-blue: 210 80% 55%;
-    --glow-gold: 45 90% 55%;
-    --glass: 240 12% 12%;
-    --glass-border: 240 10% 25%;
+    /* Custom cinematic tokens - refined */
+    --glow-purple: 265 80% 65%;
+    --glow-blue: 210 100% 65%;
+    --glow-gold: 45 100% 60%;
+    --glass: 0 0% 10%;
+    --glass-border: 0 0% 20%;
   }
 
   .dark {

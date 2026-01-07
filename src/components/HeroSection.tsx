@@ -7,7 +7,7 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
-      <div 
+      <div
         className="absolute inset-0 z-0"
         style={{
           backgroundImage: `url(${heroBg})`,
@@ -15,111 +15,74 @@ const HeroSection = () => {
           backgroundPosition: 'center',
         }}
       />
-      
+
       {/* Overlay Gradient */}
-      <div className="absolute inset-0 z-[1] bg-gradient-to-b from-background/70 via-background/50 to-background" />
-      
-      {/* Hero Gradient Effect */}
-      <div className="absolute inset-0 z-[2] hero-gradient" />
-      
-      {/* Animated particles/bokeh effect */}
-      <div className="absolute inset-0 z-[3] overflow-hidden">
-        {[...Array(6)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute w-2 h-2 rounded-full bg-primary/30"
-            style={{
-              left: `${20 + i * 15}%`,
-              top: `${30 + (i % 3) * 20}%`,
-            }}
-            animate={{
-              y: [-20, 20, -20],
-              opacity: [0.3, 0.6, 0.3],
-            }}
-            transition={{
-              duration: 4 + i,
-              repeat: Infinity,
-              ease: "easeInOut",
-            }}
-          />
-        ))}
-      </div>
-      
+      <div className="absolute inset-0 z-[1] bg-black/60" />
+      <div className="absolute inset-0 z-[1] bg-gradient-to-t from-background via-background/50 to-transparent" />
+
       {/* Content */}
       <div className="container relative z-10 px-4">
         <motion.div
-          className="text-center max-w-4xl mx-auto"
-          initial={{ opacity: 0, y: 40 }}
+          className="text-center max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease: "easeOut" }}
         >
-          <motion.p
-            className="text-muted-foreground text-sm md:text-base uppercase tracking-[0.3em] mb-6"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-          >
-            AI Video Filmmaker
-          </motion.p>
-          
-          <motion.h1
-            className="font-display text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          >
-            I Create Stories with{" "}
-            <span className="gradient-text glow-text">AI & Cinema</span>
-          </motion.h1>
-          
-          <motion.p
-            className="text-muted-foreground text-lg md:text-xl mb-12 max-w-2xl mx-auto"
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.7, duration: 0.8 }}
-          >
-            AI Video Filmmaker | Cinematic Storytelling | Visual Experiments
-          </motion.p>
-          
           <motion.div
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.2, duration: 0.8 }}
+            className="mb-8 flex justify-center"
+          >
+            <span className="px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs md:text-sm text-gray-300 backdrop-blur-md uppercase tracking-wider">
+              AI Video Filmmaker
+            </span>
+          </motion.div>
+
+          <motion.h1
+            className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-8 leading-tight tracking-tight"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.9, duration: 0.8 }}
+            transition={{ delay: 0.4, duration: 0.8 }}
           >
-            <Button 
-              size="lg" 
-              className="btn-glow bg-primary hover:bg-primary/90 text-primary-foreground px-8 py-6 text-lg font-medium"
+            Create Stories with <br />
+            <span className="text-white">AI & Cinema</span>
+          </motion.h1>
+
+          <motion.p
+            className="text-gray-400 text-lg md:text-xl mb-12 max-w-2xl mx-auto font-light leading-relaxed"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.6, duration: 0.8 }}
+          >
+            Pushing the boundaries of visual storytelling using artificial intelligence.
+            Crafting immersive narratives that blend technology with human emotion.
+          </motion.p>
+
+          <motion.div
+            className="flex flex-col sm:flex-row items-center justify-center gap-6"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.8, duration: 0.8 }}
+          >
+            <Button
+              size="lg"
+              className="bg-white text-black hover:bg-gray-200 px-8 py-6 text-lg font-medium min-w-[180px] rounded-full transition-all duration-300"
               onClick={() => document.getElementById('portfolio')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <Play className="mr-2 h-5 w-5" />
-              Watch My Work
+              <Play className="mr-2 h-5 w-5 fill-black" />
+              Watch Work
             </Button>
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               variant="outline"
-              className="border-glass-border hover:bg-glass hover:border-primary/50 px-8 py-6 text-lg font-medium transition-all duration-300"
+              className="border-white/20 text-white hover:bg-white/10 px-8 py-6 text-lg font-medium min-w-[180px] rounded-full backdrop-blur-sm transition-all duration-300"
               onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
             >
               <Mail className="mr-2 h-5 w-5" />
               Contact Me
             </Button>
           </motion.div>
-        </motion.div>
-        
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-10 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center">
-            <motion.div
-              className="w-1.5 h-3 bg-primary rounded-full mt-2"
-              animate={{ y: [0, 12, 0], opacity: [1, 0.3, 1] }}
-              transition={{ duration: 2, repeat: Infinity }}
-            />
-          </div>
         </motion.div>
       </div>
     </section>
