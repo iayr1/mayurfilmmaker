@@ -3,9 +3,9 @@ import { Mail, Phone, Youtube, Instagram, Linkedin, ExternalLink } from "lucide-
 import { Button } from "@/components/ui/button";
 
 const socialLinks = [
-  { icon: Youtube, href: "#", label: "YouTube" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
+  { icon: Youtube, href: "https://www.youtube.com/@babukidszone", label: "YouTube" },
+  { icon: Instagram, href: "https://www.instagram.com/mayur_chaudhari23_", label: "Instagram" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/iayr1", label: "LinkedIn" },
 ];
 
 const ContactSection = () => {
