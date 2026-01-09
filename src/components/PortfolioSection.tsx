@@ -48,6 +48,13 @@ const portfolioItems: PortfolioItem[] = [
     youtubeUrl: "https://youtu.be/Rc6-pr2FWDo?si=09K0fnlrWLVnNnHP",
     category: "Nursery Rhyme",
   },
+  {
+    id: 8,
+    title: "Captain America in Maharashtra",
+    description: "An AI-generated short film set in Maharashtra",
+    youtubeUrl: "https://youtu.be/Knp8dXBgpmg",
+    category: "AI Film",
+  },
 ];
 
 const PortfolioSection = () => {
